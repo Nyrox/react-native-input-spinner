@@ -469,6 +469,10 @@ class InputSpinner extends Component {
 	 * @returns {string}
 	 */
 	getValue() {
+		if (this.props.customLabel) {
+			return this.props.customLabel(this.state.value)
+		}
+
 		let value = this.state.value;
 		if (isEmpty(value)) {
 			return "";
